@@ -18,11 +18,11 @@ void Start() {
 //update is called once per frame 
 void Update (){
 	//Toggle light on/off when L key is pressed.
-	if (Input.GetKeyUp (KeyCode.L) && lightOn){
+	if (Input.GetKeyUp (KeyCode.F) && lightOn){
 		lightOn = false;
 		light.enabled = false;
 	}
-	else if (Input.GetKeyUp (KeyCode.L) && !lightOn){
+	else if (Input.GetKeyUp (KeyCode.F) && !lightOn){
 		lightOn = true; 
 		light.enabled = true;
 	

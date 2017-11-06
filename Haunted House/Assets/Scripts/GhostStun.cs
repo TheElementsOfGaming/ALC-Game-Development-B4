@@ -18,7 +18,8 @@ public class GhostStun : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		
 		if(other.gameObject.name == "Ghost"){
-			print("Ghost is stunned!");		
+			print("Ghost is stunned and crying now!");	
+			print("Why are you so mean?");	
 		}
 	}
 }
