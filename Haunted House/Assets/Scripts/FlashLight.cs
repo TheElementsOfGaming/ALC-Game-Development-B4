@@ -28,4 +28,10 @@ void Update (){
 	
 		}
 	}
+	public void setLightOn(){
+		lightOn = true;
+	}
+	public bool isLightOn(){
+		return lightOn;
+	}
 }
