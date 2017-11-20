@@ -42,6 +42,7 @@ public class GhostMove : MonoBehaviour {
 		transform.LookAt(target);
 		transform.Translate(Vector3.forward*moveSpeed*Time.deltaTime);
 	}
+	
 
 	
 	// void OnCollisionEnter(Collision other)
