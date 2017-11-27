@@ -20,8 +20,9 @@ public GameObject flashlight;
 
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag == "Player"){
-
+		if(other.gameObject.tag == "player"){
+			flashlight.gameObject.GetComponentInChildren<FlashLight>().currentPower = power;
+			Destroy(gameObject);
 		}
 	}
 }
