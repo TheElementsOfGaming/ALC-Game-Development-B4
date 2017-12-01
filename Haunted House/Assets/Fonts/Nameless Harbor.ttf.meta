@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ee38eb7da68ae48d9b9f3b4be4c4ca44
+timeCreated: 1512155421
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Nameless Harbor
+  fontNames:
+  - Nameless Harbor
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
