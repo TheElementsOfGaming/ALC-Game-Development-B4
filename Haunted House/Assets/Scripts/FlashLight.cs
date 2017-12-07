@@ -48,8 +48,7 @@ void Update (){
 		batteryText.text = currentPower.ToString();
 
 		//Drain Battery Life
-
-		if(currentPower >0 && !lightOn){
+		if(currentPower > 0 && lightOn){
 			if(!draining){
 				StartCoroutine(BatteryDrain(batDrainDelay,batDrainAmt));
 			}
