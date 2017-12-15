@@ -39,7 +39,7 @@ void Update (){
 		lightOn = false;
 		light.enabled = false;
 	}
-	else if (Input.GetKeyUp (KeyCode.F) && !lightOn){
+	else if (Input.GetKeyUp (KeyCode.F) && !lightOn && currentPower > 0){
 		lightOn = true; 
 		light.enabled = true;
 	
