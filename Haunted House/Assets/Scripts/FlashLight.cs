@@ -69,7 +69,7 @@ void Update (){
 			draining = true;
 			yield return new WaitForSeconds(delay);
 			print(currentPower);
-			currentPower -=amount;
+			currentPower -= amount;
 
 		}
 		if(currentPower <= 0){

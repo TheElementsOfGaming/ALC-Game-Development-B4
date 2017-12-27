@@ -1,47 +1,67 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class BatterySpawner : MonoBehaviour {
 
 	public Rigidbody battery;
-
+    
 	public Transform spawnPoint;
 
 	public float spawnTime;
 
 	public bool batSpawned;
+	private bool spawning = false;
+
+
 	// Use this for initialization
-//void Start () {
+	void Start () {
 		batSpawned = false;
-	// }
-	
-	// // Update is called once per frame
-	// void Update () {
-	// 	if(batSpawned == false){
-	// 		//StartCoroutine(spawnBat(spawnTime, battery));
-	// 		print("Spawn box is empty");
-	// 	}
-	// 	else if(batSpawned == true)
-	// 	{
-	// 	print("Battery hasn't spawned");
-	// 	}
-	// }
-	void onTriggerStay(Collider other){
-	print("Collision Detected");
-	// 	if(other.gameObject.tag == "Battery"){
-	// 		batSpawned = true;
-	// 		print("Battery is in the trigger");
-	// 		}
-	// else{
-	// 	batSpawned = false;
-	// 		print("Spawn Box is Empty");
-	// 		}
-	
 	}
-// 	IEnumerator spawnBat(float time, Rigidbody bat){
-// 		yield return new WaitForSeconds(time);
-// 		Instantiate(bat, spawnPoint.position, spawnPoint.rotation);
-// 		batSpawned = true;
-// 	}
- }
+	
+	// Update is called once per frame
+	void Update () {
+		if(batSpawned == false){
+			if(!spawning){
+				spawning = !spawning;
+				StartCoroutine(SpawnBat(spawnTime, battery));
+				print("Spawn Box Empty");
+			}
+		}
+		else if(batSpawned == true){
+
+			print("Battery has spawned!");
+		}
+	}
+
+	void OnTriggerEnter(Collider other){
+		
+		if(other.gameObject.tag == "Battery"){
+			print("Battery is in the trigger");
+			batSpawned = true;			
+		}
+		
+	}
+
+	void OnTriggerExit(Collider other){
+		if(other.gameObject.tag == "Battery"){
+			print("Spawner is Empty");
+			batSpawned = false;			
+		}
+	}
+
+	IEnumerator SpawnBat(float time, Rigidbody bat){
+		yield return new WaitForSeconds(time);
+			Instantiate(bat, spawnPoint.position, spawnPoint.rotation);
+			batSpawned = true;
+			spawning = !spawning;
+		
+		
+	}
+
+		public void BatteryPickup(){
+		
+			print("Spawner is Empty");
+			batSpawned = false;			
+		}
+	}
+
