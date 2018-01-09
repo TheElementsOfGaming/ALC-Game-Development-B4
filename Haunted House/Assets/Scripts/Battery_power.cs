@@ -9,15 +9,15 @@ public int power = 4;
 public GameObject batterySpawn;
 public GameObject flashlight;
 
-GameObject player;
+GameObject Player;
 
 int checkBat;
 	
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindWithTag("player");
+		Player = GameObject.FindWithTag("player");
 		batterySpawn = GameObject.FindWithTag("BatterySpawn");
-		flashlight = player;
+		flashlight = Player;
 		
 	
 	}
