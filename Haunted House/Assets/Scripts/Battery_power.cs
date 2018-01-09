@@ -6,8 +6,8 @@ public class Battery_power : MonoBehaviour {
 
 public int power = 4;
 
+public GameObject batterySpawn;
 public GameObject flashlight;
-public GameObject BatterySpawn;
 
 GameObject player;
 
@@ -16,7 +16,7 @@ int checkBat;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindWithTag("player");
-		BatterySpawn = GameObject.FindWithTag("BatterySpawn");
+		batterySpawn = GameObject.FindWithTag("BatterySpawn");
 		flashlight = player;
 		
 	
@@ -33,7 +33,7 @@ int checkBat;
 		if(other.gameObject.tag == "player" && flashlight.gameObject.GetComponentInChildren<FlashLight>().currentPower == 0 ){
 			flashlight.gameObject.GetComponentInChildren<FlashLight>().currentPower = power;
 			Destroy(gameObject);
-			BatterySpawn.gameObject.GetComponentInChildren<BatterySpawner>().BatteryPickup();
+			batterySpawn.gameObject.GetComponentInChildren<BatterySpawner>().BatteryPickup();
 		}
 	}
 }
